@@ -869,6 +869,8 @@ long list_device(void)
 MSH_CMD_EXPORT(list_device, list device in system);
 #endif
 
+#ifdef RT_USING_MSH 
+#ifdef FINSH_USING_SYMTAB
 long list(void)
 {
     rt_kprintf("--Function List:\n");
@@ -892,6 +894,8 @@ long list(void)
     return 0;
 }
 MSH_CMD_EXPORT(list, list all symbol in system)
+#endif
+#endif
 
 #ifdef RT_USING_LWP
 #include <lwp.h>

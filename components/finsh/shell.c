@@ -23,7 +23,6 @@
 #include <stdio.h>
 
 #ifdef RT_USING_MSH
-
 #include "shell.h"
 #include "msh.h"
 

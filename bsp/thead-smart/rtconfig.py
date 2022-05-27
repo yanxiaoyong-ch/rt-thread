@@ -12,7 +12,7 @@ if os.getenv('RTT_CC'):
 
 if  CROSS_TOOL == 'gcc':
     PLATFORM    = 'gcc'
-    EXEC_PATH   = r'/home/xinge/tools/riscv64-elf-x86_64-20200616-1.9.6/bin'
+    EXEC_PATH   = r'/home/yanxiaoyong.yxy/.aliot/riscv64-unknown-elf/bin'
 else:
     print 'Please make sure your toolchains is GNU GCC!'
     exit(0)

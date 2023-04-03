@@ -84,6 +84,24 @@ void rt_tick_set(rt_tick_t tick)
     rt_hw_interrupt_enable(level);
 }
 
+int array[10];
+int *ptr;
+int array_index = 11;
+void func1(void)
+{
+    ptr = array;
+}
+void func2(void)
+{
+    *(ptr+array_index) =3;
+}
+int main(void)
+{
+    func1()
+    func2()
+}
+
+
 /**
  * @brief    This function will notify kernel there is one tick passed.
  *           Normally, this function is invoked by clock ISR.

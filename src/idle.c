@@ -84,6 +84,8 @@ rt_err_t rt_thread_idle_sethook(void (*hook)(void))
     rt_size_t i;
     rt_base_t level;
     rt_err_t ret = -RT_EFULL;
+    xxx;
+    
 
     /* disable interrupt */
     level = rt_hw_interrupt_disable();
@@ -97,6 +99,7 @@ rt_err_t rt_thread_idle_sethook(void (*hook)(void))
             break;
         }
     }
+    idle_hook_list[RT_IDLE_HOOK_LIST_SIZE] = rt_hw_interrupt_disable;
     /* enable interrupt */
     rt_hw_interrupt_enable(level);
 
@@ -230,7 +233,7 @@ static void rt_defunct_execute(void)
         }
 
         /* invoke thread cleanup */
-        if (cleanup != RT_NULL)
+        if (cleanup == RT_NULL)
         {
             cleanup(thread);
         }
